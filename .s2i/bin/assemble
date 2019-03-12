@@ -1,0 +1,24 @@
+#!/bin/bash -e
+
+if [ -e /usr/local/sti/assemble ]; then
+  # old assemble location in previous php image versions
+  source /usr/local/sti/assemble
+else 
+  source ${STI_SCRIPTS_PATH}/assemble
+fi
+
+# Get access to `sake` shell command for generating DB schema and migrations
+if [ -f ${HOME}/framework/sake ]; then
+	ln -s ${HOME}/framework/sake ${HOME}/bin/sake
+    chmod a+x ${HOME}/bin/sake
+fi
+
+# Create database config
+echo '<?php' > ${HOME}/_ss_environment.php
+echo 'define("SS_ENVIRONMENT_TYPE", "dev");' >> ${HOME}/_ss_environment.php
+echo 'define("SS_DATABASE_SERVER", getenv("DATABASE_SERVICE_NAME"));' >> ${HOME}/_ss_environment.php
+echo 'define("SS_DATABASE_USERNAME", getenv("DATABASE_USER"));' >> ${HOME}/_ss_environment.php
+echo 'define("SS_DATABASE_PASSWORD", getenv("DATABASE_PASSWORD"));' >> ${HOME}/_ss_environment.php
+echo 'define("SS_DATABASE_NAME", getenv("DATABASE_NAME"));' >> ${HOME}/_ss_environment.php
+echo 'global $_FILE_TO_URL_MAPPING;' >> ${HOME}/_ss_environment.php
+echo "\$_FILE_TO_URL_MAPPING['$HOME'] = 'http://localhost/';" >> ${HOME}/_ss_environment.php

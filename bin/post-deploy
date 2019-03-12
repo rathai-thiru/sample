@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+cd $HOME
+
+# Run dev/build
+sake dev/build flush=all
