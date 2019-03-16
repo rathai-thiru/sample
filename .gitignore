@@ -1,0 +1,16 @@
+assets/*
+tools/phing-metadata
+silverstripe-cache
+.buildpath
+.project
+.settings
+.idea
+.DS_Store
+vendor/
+cms/
+framework/
+reports/
+siteconfig/
+themes/simple/
+install*
+web.config

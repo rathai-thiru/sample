@@ -1,0 +1,12 @@
+cd $OPENSHIFT_DATA_DIR
+if [ ! -d "$OPENSHIFT_DATA_DIR/media" ]
+then
+    echo 'create dir'
+    mkdir -p 'media'
+fi
+
+mkdir -p "$OPENSHIFT_REPO_DIR/assets/Uploads"
+ln -s $OPENSHIFT_DATA_DIR/media $OPENSHIFT_REPO_DIR/assets/Uploads
+
+cd $OPENSHIFT_REPO_DIR
+./framework/sake dev/build
