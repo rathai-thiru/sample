@@ -2,12 +2,12 @@
 	"name": "silverstripe/installer",
 	"description": "The SilverStripe Framework Installer",
 	"require": {
-		"php": ">=5.3.3",
-		"silverstripe/cms": "3.7.3",
-		"silverstripe/framework": "3.7.3",
-		"silverstripe/reports": "3.7.3",
-		"silverstripe/siteconfig": "3.7.3",
-		"silverstripe-themes/simple": "3.1.*"
+        "php": ">=5.3.3",
+        "silverstripe/cms": "3.6.5@stable",
+        "silverstripe/framework": "3.6.5@stable",
+        "silverstripe/reports": "3.6.5@stable",
+        "silverstripe/siteconfig": "3.6.5@stable",
+        "silverstripe-themes/simple": "3.1.*"
 	},
 	"require-dev": {
 		"phpunit/PHPUnit": "~3.7"
