@@ -1,16 +1,16 @@
 <?php
 define('SS_ENVIRONMENT_TYPE', 'dev');
 
-$host = (getenv('OPENSHIFT_MYSQL_DB_HOST')) ? getenv('MYSQL_DATABASE_HOST') : putenv('MYSQL_DATABASE_HOST=localhost') ;
-$port = (getenv('OPENSHIFT_MYSQL_DB_PORT')) ? getenv('MYSQL_DATABASE_PORT') : putenv('MYSQL_DATABASE_HOST=3306');
-$user = (getenv('MYSQL_DATABASE_USER')) ? getenv('MYSQL_DATABASE_USER') : putenv('OPENSHIFT_MYSQL_DB_USERNAME=mysqluser') ;
+$host = (getenv('MYSQL_DATABASE_HOST')) ? getenv('MYSQL_DATABASE_HOST') : putenv('MYSQL_DATABASE_HOST=localhost') ;
+$port = (getenv('MYSQL_DATABASE_PORT')) ? getenv('MYSQL_DATABASE_PORT') : putenv('MYSQL_DATABASE_PORT=3306');
+$user = (getenv('MYSQL_DATABASE_USER')) ? getenv('MYSQL_DATABASE_USER') : putenv('MYSQL_DATABASE_USER=mysqluser') ;
 $pass = (getenv('MYSQL_DATABASE_PASSWORD')) ? getenv('MYSQL_DATABASE_PASSWORD') : putenv('MYSQL_DATABASE_PASSWORD=mysqluserpassword') ;
 
 define('SS_DATABASE_CLASS', 'MySQLPDODatabase');
 define('SS_DATABASE_SERVER', getenv('MYSQL_DATABASE_HOST'));
 define('SS_DATABASE_PORT', getenv('MYSQL_DATABASE_PORT'));
 define("SS_DATABASE_USERNAME", getenv('MYSQL_DATABASE_USER'));
-define('SS_DATABASE_PASSWORD', getenv('MYSQL_DATABASE_NAME'));
+define('SS_DATABASE_PASSWORD', getenv('MYSQL_DATABASE_PASSWORD'));
 define('SS_DATABASE_NAME', getenv('MYSQL_DATABASE_NAME'));
 
 define('SS_DEFAULT_ADMIN_USERNAME', 'admin');
